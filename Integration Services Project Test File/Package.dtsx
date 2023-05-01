@@ -1,0 +1,105 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/30/2023 2:13:34 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-1TG1IKD"
+  DTS:CreatorName="DESKTOP-1TG1IKD\leo"
+  DTS:DTSID="{C625FEB9-4D90-4054-ADDE-6DA2FF5DD830}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5035.3"
+  DTS:LocaleID="8192"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{C6DDC5B8-6CD1-41FA-AB78-FBB44D20FEC5}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(local).Test.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E95293CE-5255-4C33-A482-D733DACBCEEE}"
+      DTS:ObjectName="(local).Test.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=(local);User ID=sa;Initial Catalog=Test;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Package-{E95293CE-5255-4C33-A482-D733DACBCEEE}(local).Test.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAcb49AG6f20ivYDfk1psXiwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACG5rwZSqfT5vADjGGWzSqrF9Gu9InWpsjWOqv84VI+FwAAAAAOgAAAAAIAACAAAACn8e6vMN17WajHiJAHedtJKuqCqGkrB5MygCnvx1eTBiAAAADVSGaKbR0uLfFbK3uqoc6eyARMwnoevOZiRopsb2oQC0AAAADDT6TD+qW8QIox4FVIDwxByXSqjn89A+NzHbl08heTez3j3vuP+4Y1AL9bIOSQpCwZsOYZMZAKxF98P5Jv+HGT</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Num Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{D23538AA-B378-46B3-BCC6-800047688A9B}"
+      DTS:ObjectName="Num Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="8192"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\SSIS\In\Num.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Num"
+              DTS:DTSID="{2BCBE3F8-941B-48B4-A85B-6881456FED9E}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Pass Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{CB087F85-11FD-4737-A39D-4210B7040B84}"
+      DTS:ObjectName="Pass Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="8192"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\SSIS\In\PassList.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="www"
+              DTS:DTSID="{B5547B9A-FEC6-4849-A3D8-34CBD3C3275A}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables />
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
