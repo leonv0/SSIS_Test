@@ -1,0 +1,1402 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/30/2023 2:13:34 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-1TG1IKD"
+  DTS:CreatorName="DESKTOP-1TG1IKD\leo"
+  DTS:DTSID="{C625FEB9-4D90-4054-ADDE-6DA2FF5DD830}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5035.3"
+  DTS:LocaleID="8192"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="54"
+  DTS:VersionGUID="{1DA6AED9-790D-4584-9168-EBCC4A9FDFE5}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{4C550CC8-C563-448E-8832-8B8F183FF6AD}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::FullProcessFilePath]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="8192"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\SSIS\Process\">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 0"
+              DTS:DTSID="{A4AD1055-8BEF-4AC2-B747-FED686859766}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 1"
+              DTS:DTSID="{2435BE08-0565-4806-A09E-66D0DC0E9AFA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 2"
+              DTS:DTSID="{5378F384-7079-4A57-AD0D-7FFE568049B8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 3"
+              DTS:DTSID="{D95BAB40-6BDC-4A3E-92FD-87AF4FC41A99}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 4"
+              DTS:DTSID="{E3DA63F4-DBBD-4AE0-92A6-5C368557EB86}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 5"
+              DTS:DTSID="{6AA2DA52-8FE9-43CD-8A98-DF5A0E3648F7}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[In]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{8730E1BE-CB71-4868-9220-6A26715C27AB}"
+      DTS:ObjectName="In">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="2"
+          DTS:ConnectionString="C:\SSIS\In" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Log]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{AEEEB2C8-C7AE-4532-A8F4-14867FF0704C}"
+      DTS:ObjectName="Log">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="LogSSIS" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="Log"
+      DTS:CreationName="Microsoft.LogProviderTextFile"
+      DTS:Description="Writes log entries for events to a CSV file"
+      DTS:DTSID="{24B4141C-DAA0-48F7-B34E-74EDE3B3E71D}"
+      DTS:ObjectName="SSIS log provider for Text files">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BEEA321F-2E7D-485A-8B85-A58C3369B443}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F698F2E9-57E0-46BF-A322-40B64AA702CD}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::ProcessFolder] +@[User::FileName]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FullProcessFilePath">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\SSIS\Process\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{035FB04D-6E5B-42B4-8DDA-626369B1EF16}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::SourceFolder] +  @[User::FileName]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FullSourceFilePath">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\SSIS\In\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6DB18220-3606-48B1-AC05-A2EA386F2901}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ProcessFolder">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\SSIS\Process\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F0C4682A-DE16-469C-8FF8-CA53489D2B50}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SourceFolder">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\SSIS\In\</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="2" />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Clear data"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="For Debug only!!!!"
+      DTS:DTSID="{868F1FE9-9BA0-4FCB-9FAD-8F2BD59997FD}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Clear data"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0"
+        DTS:LoggingMode="2" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{81196D17-999E-47CA-91AB-5AC5FA56882A}"
+          SQLTask:SqlStatementSource="truncate table dbo.OperationLog&#xA;truncate table [dbo].[ImportPnr]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Create Import Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Create constant table for import"
+      DTS:DTSID="{93473CA4-42DD-47FF-BC09-AD22BD8F78D3}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Create Import Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0"
+        DTS:LoggingMode="2" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{81196D17-999E-47CA-91AB-5AC5FA56882A}"
+          SQLTask:SqlStatementSource="if object_id('dbo.ImportPnr') is null&#xA;begin&#xA;&#x9;create table dbo.ImportPnr &#xA;&#x9;(&#xA;&#x9;&#x9;[FileName] varchar(256) not null,&#xA;&#x9;&#x9;[RowNumber] int not null,&#xA;&#x9;&#x9;Col0 varchar(256) null,&#xA;&#x9;&#x9;Col1 varchar(256) null,&#xA;&#x9;&#x9;Col2 varchar(256) null,&#xA;&#x9;&#x9;Col3 varchar(256) null,&#xA;&#x9;&#x9;Col4 varchar(256) null,&#xA;&#xA;&#x9;)&#xA;&#xA;&#x9;ALTER TABLE dbo.ImportPnr  ADD CONSTRAINT PK_dbo_ImportPnr_RowNumber_FileName  PRIMARY KEY CLUSTERED &#xA;&#x9;(&#xA;&#x9;&#x9;[FileName] ASC,&#xA;&#x9;&#x9;[RowNumber] ASC&#xA;&#x9;) WITH ( FILLFACTOR = 40)&#xA;end&#xA;GO&#xA;&#xA;--ALTER TABLE [dbo].[Passenger]&#xA;--   ADD CONSTRAINT FK_Passenger_Flight FOREIGN KEY (Flight_ID)&#xA;--      REFERENCES [dbo].[Flight] (ID)&#xA;--GO&#xA;&#xA;--CREATE UNIQUE NONCLUSTERED INDEX [NonClusteredIndex_Flight_ID_Name] ON [dbo].[Passenger]&#xA;--(&#xA;--&#x9;[Flight_ID] ASC,&#xA;--&#x9;[Name] ASC&#xA;--)&#xA;--GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Create Log Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Create Log Table"
+      DTS:DTSID="{180702BE-A27D-4C99-A680-D4462528D4C2}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Create Log Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0"
+        DTS:LoggingMode="2" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{81196D17-999E-47CA-91AB-5AC5FA56882A}"
+          SQLTask:SqlStatementSource="if object_id('dbo.OperationLog') is null&#xA;begin&#xA;create table dbo.OperationLog &#xA;(&#xA;&#x9;ID bigint not null identity(1,1) primary key,&#xA;&#x9;[FileName] varchar(256) not null,&#xA;&#x9;[FilePath] varchar(256) not null,&#xA;&#x9;[Stage] varchar(256) not null,&#xA;&#x9;[OperationDateTime] datetime not null default(getdate())&#xA;)&#xA;end" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Get Source File"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="List and import files"
+      DTS:DTSID="{CB95576A-E57D-4990-ADDE-79DEC993A869}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Get Source File">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{CABD2621-26D6-471F-8C95-0FEB0009FB85}"
+        DTS:ObjectName="{CABD2621-26D6-471F-8C95-0FEB0009FB85}">
+        <DTS:PropertyExpression
+          DTS:Name="Directory">@[User::SourceFolder]</DTS:PropertyExpression>
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="C:\SSIS\In\" />
+            <FEFEProperty
+              FileSpec="*.pnr" />
+            <FEFEProperty
+              FileNameRetrievalType="1" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0"
+        DTS:LoggingMode="2" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Get Source File\Clear"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:Description="File System Task"
+          DTS:DTSID="{8b899507-eebe-485e-b4b3-c69bf6a32d32}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Clear"
+          DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0"
+            DTS:LoggingMode="2" />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskOperationType="MoveFile"
+              TaskSourcePath="User::FullProcessFilePath"
+              TaskIsSourceVariable="True"
+              TaskDestinationPath="User::SourceFolder"
+              TaskIsDestinationVariable="True" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Get Source File\Load Data 2 Temp"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{BF242A9F-2520-4A65-AF29-2AC7D50D42D3}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load Data 2 Temp"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0"
+            DTS:LoggingMode="2" />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Get Source File\Load Data 2 Temp\Derived Column"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Get Source File\Load Data 2 Temp\Derived Column.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Get Source File\Load Data 2 Temp\Derived Column.Inputs[Derived Column Input].Columns[Column 5]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Column 5"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Get Source File\Load Data 2 Temp\PNR_import.Outputs[Flat File Source Output].Columns[Column 5]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">@[User::FileName]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[User::FileName]</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Get Source File\Load Data 2 Temp\Derived Column.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Get Source File\Load Data 2 Temp\Derived Column.Inputs[Derived Column Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Get Source File\Load Data 2 Temp\Derived Column.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Get Source File\Load Data 2 Temp\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Get Source File\Load Data 2 Temp\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Get Source File\Load Data 2 Temp\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Get Source File\Load Data 2 Temp\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Get Source File\Load Data 2 Temp\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Get Source File\Load Data 2 Temp\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[ImportPnr]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Get Source File\Load Data 2 Temp\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{81196D17-999E-47CA-91AB-5AC5FA56882A}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[(local).Import]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Get Source File\Load Data 2 Temp\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Get Source File\Load Data 2 Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Column 1]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Column 1"
+                          externalMetadataColumnId="Package\Get Source File\Load Data 2 Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Col1]"
+                          lineageId="Package\Get Source File\Load Data 2 Temp\PNR_import.Outputs[Flat File Source Output].Columns[Column 1]" />
+                        <inputColumn
+                          refId="Package\Get Source File\Load Data 2 Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Column 5]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Column 5"
+                          externalMetadataColumnId="Package\Get Source File\Load Data 2 Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FileName]"
+                          lineageId="Package\Get Source File\Load Data 2 Temp\PNR_import.Outputs[Flat File Source Output].Columns[Column 5]" />
+                        <inputColumn
+                          refId="Package\Get Source File\Load Data 2 Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Column 2]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Column 2"
+                          externalMetadataColumnId="Package\Get Source File\Load Data 2 Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Col2]"
+                          lineageId="Package\Get Source File\Load Data 2 Temp\PNR_import.Outputs[Flat File Source Output].Columns[Column 2]" />
+                        <inputColumn
+                          refId="Package\Get Source File\Load Data 2 Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Column 3]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Column 3"
+                          externalMetadataColumnId="Package\Get Source File\Load Data 2 Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Col3]"
+                          lineageId="Package\Get Source File\Load Data 2 Temp\PNR_import.Outputs[Flat File Source Output].Columns[Column 3]" />
+                        <inputColumn
+                          refId="Package\Get Source File\Load Data 2 Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Column 4]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Column 4"
+                          externalMetadataColumnId="Package\Get Source File\Load Data 2 Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Col4]"
+                          lineageId="Package\Get Source File\Load Data 2 Temp\PNR_import.Outputs[Flat File Source Output].Columns[Column 4]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Get Source File\Load Data 2 Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                          dataType="i8"
+                          name="ID" />
+                        <externalMetadataColumn
+                          refId="Package\Get Source File\Load Data 2 Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FileName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="256"
+                          name="FileName" />
+                        <externalMetadataColumn
+                          refId="Package\Get Source File\Load Data 2 Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RowNumber]"
+                          dataType="i4"
+                          name="RowNumber" />
+                        <externalMetadataColumn
+                          refId="Package\Get Source File\Load Data 2 Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Col1]"
+                          codePage="1252"
+                          dataType="str"
+                          length="256"
+                          name="Col1" />
+                        <externalMetadataColumn
+                          refId="Package\Get Source File\Load Data 2 Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Col2]"
+                          codePage="1252"
+                          dataType="str"
+                          length="256"
+                          name="Col2" />
+                        <externalMetadataColumn
+                          refId="Package\Get Source File\Load Data 2 Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Col3]"
+                          codePage="1252"
+                          dataType="str"
+                          length="256"
+                          name="Col3" />
+                        <externalMetadataColumn
+                          refId="Package\Get Source File\Load Data 2 Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Col4]"
+                          codePage="1252"
+                          dataType="str"
+                          length="256"
+                          name="Col4" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Get Source File\Load Data 2 Temp\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Get Source File\Load Data 2 Temp\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Get Source File\Load Data 2 Temp\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Get Source File\Load Data 2 Temp\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Get Source File\Load Data 2 Temp\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Get Source File\Load Data 2 Temp\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Get Source File\Load Data 2 Temp\PNR_import"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="8192"
+                  name="PNR_import"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Get Source File\Load Data 2 Temp\PNR_import.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                      connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Get Source File\Load Data 2 Temp\PNR_import.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Get Source File\Load Data 2 Temp\PNR_import.Outputs[Flat File Source Output].Columns[Column 0]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Get Source File\Load Data 2 Temp\PNR_import.Outputs[Flat File Source Output].ExternalColumns[Column 0]"
+                          length="50"
+                          lineageId="Package\Get Source File\Load Data 2 Temp\PNR_import.Outputs[Flat File Source Output].Columns[Column 0]"
+                          name="Column 0"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Get Source File\Load Data 2 Temp\PNR_import.Outputs[Flat File Source Output].Columns[Column 1]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Get Source File\Load Data 2 Temp\PNR_import.Outputs[Flat File Source Output].ExternalColumns[Column 1]"
+                          length="50"
+                          lineageId="Package\Get Source File\Load Data 2 Temp\PNR_import.Outputs[Flat File Source Output].Columns[Column 1]"
+                          name="Column 1"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Get Source File\Load Data 2 Temp\PNR_import.Outputs[Flat File Source Output].Columns[Column 2]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Get Source File\Load Data 2 Temp\PNR_import.Outputs[Flat File Source Output].ExternalColumns[Column 2]"
+                          length="50"
+                          lineageId="Package\Get Source File\Load Data 2 Temp\PNR_import.Outputs[Flat File Source Output].Columns[Column 2]"
+                          name="Column 2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Get Source File\Load Data 2 Temp\PNR_import.Outputs[Flat File Source Output].Columns[Column 3]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Get Source File\Load Data 2 Temp\PNR_import.Outputs[Flat File Source Output].ExternalColumns[Column 3]"
+                          length="50"
+                          lineageId="Package\Get Source File\Load Data 2 Temp\PNR_import.Outputs[Flat File Source Output].Columns[Column 3]"
+                          name="Column 3"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Get Source File\Load Data 2 Temp\PNR_import.Outputs[Flat File Source Output].Columns[Column 4]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Get Source File\Load Data 2 Temp\PNR_import.Outputs[Flat File Source Output].ExternalColumns[Column 4]"
+                          length="50"
+                          lineageId="Package\Get Source File\Load Data 2 Temp\PNR_import.Outputs[Flat File Source Output].Columns[Column 4]"
+                          name="Column 4"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Get Source File\Load Data 2 Temp\PNR_import.Outputs[Flat File Source Output].Columns[Column 5]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Get Source File\Load Data 2 Temp\PNR_import.Outputs[Flat File Source Output].ExternalColumns[Column 5]"
+                          length="50"
+                          lineageId="Package\Get Source File\Load Data 2 Temp\PNR_import.Outputs[Flat File Source Output].Columns[Column 5]"
+                          name="Column 5"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Get Source File\Load Data 2 Temp\PNR_import.Outputs[Flat File Source Output].ExternalColumns[Column 0]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Column 0" />
+                        <externalMetadataColumn
+                          refId="Package\Get Source File\Load Data 2 Temp\PNR_import.Outputs[Flat File Source Output].ExternalColumns[Column 1]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Column 1" />
+                        <externalMetadataColumn
+                          refId="Package\Get Source File\Load Data 2 Temp\PNR_import.Outputs[Flat File Source Output].ExternalColumns[Column 2]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Column 2" />
+                        <externalMetadataColumn
+                          refId="Package\Get Source File\Load Data 2 Temp\PNR_import.Outputs[Flat File Source Output].ExternalColumns[Column 3]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Column 3" />
+                        <externalMetadataColumn
+                          refId="Package\Get Source File\Load Data 2 Temp\PNR_import.Outputs[Flat File Source Output].ExternalColumns[Column 4]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Column 4" />
+                        <externalMetadataColumn
+                          refId="Package\Get Source File\Load Data 2 Temp\PNR_import.Outputs[Flat File Source Output].ExternalColumns[Column 5]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Column 5" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Get Source File\Load Data 2 Temp\PNR_import.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Get Source File\Load Data 2 Temp\PNR_import.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Get Source File\Load Data 2 Temp\PNR_import.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Get Source File\Load Data 2 Temp\PNR_import.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Get Source File\Load Data 2 Temp\PNR_import.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Get Source File\Load Data 2 Temp\PNR_import.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Get Source File\Load Data 2 Temp\PNR_import.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Get Source File\Load Data 2 Temp.Paths[Derived Column Output]"
+                  endId="Package\Get Source File\Load Data 2 Temp\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\Get Source File\Load Data 2 Temp\Derived Column.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Get Source File\Load Data 2 Temp.Paths[Flat File Source Output]"
+                  endId="Package\Get Source File\Load Data 2 Temp\Derived Column.Inputs[Derived Column Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Get Source File\Load Data 2 Temp\PNR_import.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Get Source File\Log List"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="TestPackage insert filename into dbo.del_FI "
+          DTS:DTSID="{568C9705-2941-4F9A-8F6A-79B6BB2F9183}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Log List"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0"
+            DTS:LoggingMode="2" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{81196D17-999E-47CA-91AB-5AC5FA56882A}"
+              SQLTask:SqlStatementSource="INSERT INTO dbo.OperationLog&#xA;                (FileName, FilePath,[Stage])&#xA;VALUES   (?,?,'ListFiles')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::FileName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::SourceFolder"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Get Source File\Log load"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="TestPackage insert filename into dbo.del_FI "
+          DTS:DTSID="{01c5eca2-183d-40a4-acca-b370975fa1ef}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Log load"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0"
+            DTS:LoggingMode="2" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{81196D17-999E-47CA-91AB-5AC5FA56882A}"
+              SQLTask:SqlStatementSource="INSERT INTO dbo.OperationLog&#xA;                (FileName, FilePath,[Stage])&#xA;VALUES   (?,?,'Load')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::FileName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::SourceFolder"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Get Source File\Move2Process Folder"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:Description="File System Task"
+          DTS:DTSID="{28FE110B-B8CF-4DEE-8D04-05D57A5D5CBB}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Move2Process Folder"
+          DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0"
+            DTS:LoggingMode="2" />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskOperationType="MoveFile"
+              TaskSourcePath="User::FullSourceFilePath"
+              TaskIsSourceVariable="True"
+              TaskDestinationPath="User::ProcessFolder"
+              TaskIsDestinationVariable="True" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Get Source File\RowNumber"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="TestPackage insert filename into dbo.del_FI "
+          DTS:DTSID="{9758206f-53b2-442f-8a1d-3083cc929254}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="RowNumber"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0"
+            DTS:LoggingMode="2" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{81196D17-999E-47CA-91AB-5AC5FA56882A}"
+              SQLTask:SqlStatementSource="declare @i int&#xA;set @i = 0&#xA;update [dbo].[ImportPnr]&#xA;set  @i = [RowNumber] = @i+1 &#xA;where [FileName] = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::FileName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Get Source File.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{4F984732-C460-4108-A02E-D0FA837B4D70}"
+          DTS:From="Package\Get Source File\Log List"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Get Source File\Move2Process Folder" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Get Source File.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{BF447B96-DD71-46D2-8640-320D79A986EC}"
+          DTS:From="Package\Get Source File\Move2Process Folder"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Get Source File\Load Data 2 Temp" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Get Source File.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{D6BF4AD2-F7DE-4578-9E13-7122848CF0B5}"
+          DTS:From="Package\Get Source File\Load Data 2 Temp"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Get Source File\Log load" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Get Source File.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{4731C457-E3BB-4C6D-9C6D-33C8A2CB0D4F}"
+          DTS:From="Package\Get Source File\Log load"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Get Source File\RowNumber" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Get Source File.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{71C30517-621C-423D-95B5-A878D5096CC0}"
+          DTS:From="Package\Get Source File\RowNumber"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\Get Source File\Clear" />
+      </DTS:PrecedenceConstraints>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{890B7D13-091E-4B4B-AB94-D933A8E26780}"
+          DTS:ObjectName="{890B7D13-091E-4B4B-AB94-D933A8E26780}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::FileName" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{A485B9F0-B867-4B54-88D6-0CBB4598A458}"
+      DTS:From="Package\Create Import Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Get Source File" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{9A01A2AD-B02D-4B84-BB17-9ACA2B98778C}"
+      DTS:From="Package\Create Log Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Get Source File" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{DA05AE06-56EA-44EA-BE71-6F6B22F85653}"
+      DTS:From="Package\Clear data"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Get Source File" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="160.301886792453,41.6603773584906"
+          Id="Package\Clear data"
+          TopLeft="961.999985665083,15.9999997615814" />
+        <NodeLayout
+          Size="189.283018867925,41.6603773584906"
+          Id="Package\Create Import Table"
+          TopLeft="265.999996036291,22.9999996572733" />
+        <NodeLayout
+          Size="173.886792452831,41.6603773584906"
+          Id="Package\Create Log Table"
+          TopLeft="591.999991178513,20.9999996870756" />
+        <NodeLayout
+          Size="101.433962264151,41.6603773584906"
+          Id="Package\Get Source File\Clear"
+          TopLeft="243.415084787979,439.613206533891" />
+        <NodeLayout
+          Size="160.301886792453,41.6603773584906"
+          Id="Package\Get Source File\Load Data 2 Temp"
+          TopLeft="245.509424365916,84.3584868258461" />
+        <NodeLayout
+          Size="112.301886792453,41.6603773584906"
+          Id="Package\Get Source File\Log List"
+          TopLeft="74.5094276292705,13.924524815015" />
+        <NodeLayout
+          Size="115.924528301887,41.6603773584906"
+          Id="Package\Get Source File\Log load"
+          TopLeft="74.5094269140149,87.3679302652493" />
+        <NodeLayout
+          Size="174.792452830189,41.6603773584906"
+          Id="Package\Get Source File\Move2Process Folder"
+          TopLeft="233.509424544731,17.226412516439" />
+        <NodeLayout
+          Size="133.132075471699,41.6603773584906"
+          Id="Package\Get Source File\RowNumber"
+          TopLeft="263.509424812951,150.367929326476" />
+        <EdgeLayout
+          Id="Package\Get Source File.PrecedenceConstraints[Constraint]"
+          TopLeft="186.811314421723,36.4056573449723">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="46.6981101230077,0"
+              Start="0,0"
+              End="39.1981101230077,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="39.1981101230077,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Get Source File.PrecedenceConstraints[Constraint 1]"
+          TopLeft="323.283009360984,58.8867898749296">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.4716969509165"
+              Start="0,0"
+              End="0,17.9716969509165">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.9716969509165" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Get Source File.PrecedenceConstraints[Constraint 2]"
+          TopLeft="245.509424365916,106.693397224793">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-55.0754691500144,0"
+              Start="0,0"
+              End="-47.5754691500144,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-47.5754691500144,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Get Source File.PrecedenceConstraints[Constraint 3]"
+          TopLeft="190.433955215902,113.808181837576">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="73.0754695970492,57.3899361681447"
+              Start="0,0"
+              End="65.5754695970492,57.3899361681447">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="26.8518207300871,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="26.8518207300871,0"
+                    Point2="30.8518207300871,0"
+                    Point3="30.8518207300871,4" />
+                  <mssgle:LineSegment
+                    End="30.8518207300871,53.3899361681447" />
+                  <mssgle:CubicBezierSegment
+                    Point1="30.8518207300871,53.3899361681447"
+                    Point2="30.8518207300871,57.3899361681447"
+                    Point3="34.8518207300871,57.3899361681447" />
+                  <mssgle:LineSegment
+                    End="65.5754695970492,57.3899361681447" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Get Source File.PrecedenceConstraints[Constraint 4]"
+          TopLeft="330.0754625488,192.028306684966">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-35.9433966287456,247.584899848925"
+              Start="0,0"
+              End="-35.9433966287456,240.084899848925">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,119.792449924462" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,119.792449924462"
+                    Point2="0,123.792449924462"
+                    Point3="-4,123.792449924462" />
+                  <mssgle:LineSegment
+                    End="-31.9433966287456,123.792449924462" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-31.9433966287456,123.792449924462"
+                    Point2="-35.9433966287456,123.792449924462"
+                    Point3="-35.9433966287456,127.792449924462" />
+                  <mssgle:LineSegment
+                    End="-35.9433966287456,240.084899848925" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="572.377358490566,537.056603773585"
+          Size="572.377358490566,579.622641509434"
+          Id="Package\Get Source File"
+          TopLeft="248.499996379017,121.499998271466" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="360.641505470253,64.6603770157639">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="32.9528305314052,56.8396212557017"
+              Start="0,0"
+              End="32.9528305314052,49.3396212557017">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.7173582643487" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33.7173582643487"
+                    Point2="0,37.7173582643487"
+                    Point3="4,37.7173582643487" />
+                  <mssgle:LineSegment
+                    End="28.9528305314052,37.7173582643487" />
+                  <mssgle:CubicBezierSegment
+                    Point1="28.9528305314052,37.7173582643487"
+                    Point2="32.9528305314052,37.7173582643487"
+                    Point3="32.9528305314052,41.7173582643487" />
+                  <mssgle:LineSegment
+                    End="32.9528305314052,49.3396212557017" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="678.943387404928,62.6603770455661">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-144.254711780628,58.8396212258994"
+              Start="0,0"
+              End="-144.254711780628,51.3396212258994">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.4198106129497" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.4198106129497"
+                    Point2="0,29.4198106129497"
+                    Point3="-4,29.4198106129497" />
+                  <mssgle:LineSegment
+                    End="-140.254711780628,29.4198106129497" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-140.254711780628,29.4198106129497"
+                    Point2="-144.254711780628,29.4198106129497"
+                    Point3="-144.254711780628,33.4198106129497" />
+                  <mssgle:LineSegment
+                    End="-144.254711780628,51.3396212258994" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="1042.15092906131,57.660377120072">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-366.367913814368,63.8396211513936"
+              Start="0,0"
+              End="-366.367913814368,56.3396211513936">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.3623840066645" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38.3623840066645"
+                    Point2="0,42.3623840066645"
+                    Point3="-4,42.3623840066645" />
+                  <mssgle:LineSegment
+                    End="-362.367913814368,42.3623840066645" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-362.367913814368,42.3623840066645"
+                    Point2="-366.367913814368,42.3623840066645"
+                    Point3="-366.367913814368,46.3623840066645" />
+                  <mssgle:LineSegment
+                    End="-366.367913814368,56.3396211513936" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Get Source File\Load Data 2 Temp">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="132.22641509434,42.5660377358491"
+          Id="Package\Get Source File\Load Data 2 Temp\PNR_import"
+          TopLeft="530.999992087484,27.9999995827675" />
+        <NodeLayout
+          Size="166.641509433963,41.6603773584906"
+          Id="Package\Get Source File\Load Data 2 Temp\OLE DB Destination"
+          TopLeft="585.99999126792,232.999996528029" />
+        <NodeLayout
+          Size="149.433962264151,41.6603773584906"
+          Id="Package\Get Source File\Load Data 2 Temp\Derived Column"
+          TopLeft="592.999991163611,130.999998047948" />
+        <EdgeLayout
+          Id="Package\Get Source File\Load Data 2 Temp.Paths[Flat File Source Output]"
+          TopLeft="597.113199634654,70.5660373186165">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="70.6037726610325,60.4339607293313"
+              Start="0,0"
+              End="70.6037726610325,52.9339607293313">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.2169803646657" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.2169803646657"
+                    Point2="0,30.2169803646657"
+                    Point3="4,30.2169803646657" />
+                  <mssgle:LineSegment
+                    End="66.6037726610325,30.2169803646657" />
+                  <mssgle:CubicBezierSegment
+                    Point1="66.6037726610325,30.2169803646657"
+                    Point2="70.6037726610325,30.2169803646657"
+                    Point3="70.6037726610325,34.2169803646657" />
+                  <mssgle:LineSegment
+                    End="70.6037726610325,52.9339607293313" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Get Source File\Load Data 2 Temp.Paths[Derived Column Output]"
+          TopLeft="668.518859140294,172.660375406438">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.3396211215911"
+              Start="0,0"
+              End="0,52.8396211215911">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.8396211215911" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Get Source File\Load Data 2 Temp\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

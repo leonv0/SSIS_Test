@@ -5,13 +5,30 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "Integration Services Project Test File", "Integration Services Project Test File\Integration Services Project Test File.dtproj", "{E4CC7F01-4BFC-4A0E-8265-193B516F4978}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DataBase", "DataBase\DataBase.sqlproj", "{175536BF-60F3-4CEF-8F56-79FD6CAC4ADB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Development|Default = Development|Default
+		Debug|Any CPU = Debug|Any CPU
+		Development|Any CPU = Development|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E4CC7F01-4BFC-4A0E-8265-193B516F4978}.Development|Default.ActiveCfg = Development
-		{E4CC7F01-4BFC-4A0E-8265-193B516F4978}.Development|Default.Build.0 = Development
+		{E4CC7F01-4BFC-4A0E-8265-193B516F4978}.Debug|Any CPU.ActiveCfg = Development
+		{E4CC7F01-4BFC-4A0E-8265-193B516F4978}.Debug|Any CPU.Build.0 = Development
+		{E4CC7F01-4BFC-4A0E-8265-193B516F4978}.Development|Any CPU.ActiveCfg = Development
+		{E4CC7F01-4BFC-4A0E-8265-193B516F4978}.Development|Any CPU.Build.0 = Development
+		{E4CC7F01-4BFC-4A0E-8265-193B516F4978}.Release|Any CPU.ActiveCfg = Development
+		{E4CC7F01-4BFC-4A0E-8265-193B516F4978}.Release|Any CPU.Build.0 = Development
+		{175536BF-60F3-4CEF-8F56-79FD6CAC4ADB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{175536BF-60F3-4CEF-8F56-79FD6CAC4ADB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{175536BF-60F3-4CEF-8F56-79FD6CAC4ADB}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{175536BF-60F3-4CEF-8F56-79FD6CAC4ADB}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{175536BF-60F3-4CEF-8F56-79FD6CAC4ADB}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{175536BF-60F3-4CEF-8F56-79FD6CAC4ADB}.Development|Any CPU.Deploy.0 = Debug|Any CPU
+		{175536BF-60F3-4CEF-8F56-79FD6CAC4ADB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{175536BF-60F3-4CEF-8F56-79FD6CAC4ADB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{175536BF-60F3-4CEF-8F56-79FD6CAC4ADB}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
